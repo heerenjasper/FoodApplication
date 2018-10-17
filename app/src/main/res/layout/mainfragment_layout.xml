@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/viewBg"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+    <!--app:layout_behavior="scrolling_view_behaviour">-->
+
+    <EditText
+        android:id="@+id/search_text"
+        android:layout_width="300dp"
+        android:layout_height="44dp"
+        android:hint="@string/your_recipe_here"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toRightOf="@+id/search_text"
+        android:id="@+id/search_button"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        android:id="@+id/recyclerv_view">
+    </android.support.v7.widget.RecyclerView>
+
+</android.support.constraint.ConstraintLayout>
