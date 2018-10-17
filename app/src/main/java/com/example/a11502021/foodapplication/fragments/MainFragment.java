@@ -123,19 +123,11 @@ public class MainFragment extends Fragment {
     private void initRecyclerView() {
         Log.d(TAG, "initRecyclerView: init Recyclerview.");
         mRecyclerView = mView.findViewById(R.id.recyclerv_view);
-        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(2, 10, true, getResources()));
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mAdapter = new RecyclerViewAdapter(mHits, getActivity());
         mRecyclerView.setAdapter(mAdapter);
-    }
-
-    /**
-     * Converting dp to pixel
-     */
-    private int dpToPx(int dp) {
-        Resources r = getResources();
-        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
 }

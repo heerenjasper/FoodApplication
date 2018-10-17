@@ -4,8 +4,10 @@ package com.example.a11502021.foodapplication.fragments.decoration;
  * Created by 11502021 on 17/10/2018.
  */
 
+import android.content.res.Resources;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.View;
 
 /**
@@ -17,9 +19,9 @@ public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
     private int spacing;
     private boolean includeEdge;
 
-    public GridSpacingItemDecoration(int spanCount, int spacing, boolean includeEdge) {
+    public GridSpacingItemDecoration(int spanCount, int spacing, boolean includeEdge, Resources resources) {
         this.spanCount = spanCount;
-        this.spacing = spacing;
+        this.spacing = dpToPx(spacing, resources);
         this.includeEdge = includeEdge;
     }
 
@@ -43,6 +45,10 @@ public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
                 outRect.top = spacing; // item top
             }
         }
+    }
+
+    private int dpToPx(int dp, Resources r) {
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
 }
