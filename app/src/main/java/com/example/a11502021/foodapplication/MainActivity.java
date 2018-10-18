@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.a11502021.foodapplication.adapters.RecipesStatePagerAdapter;
-import com.example.a11502021.foodapplication.api.HitsController;
 import com.example.a11502021.foodapplication.fragments.DetailsFragment;
 import com.example.a11502021.foodapplication.fragments.MainFragment;
 

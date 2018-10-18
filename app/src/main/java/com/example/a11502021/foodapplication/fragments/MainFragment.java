@@ -1,25 +1,28 @@
 package com.example.a11502021.foodapplication.fragments;
 
-import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.a11502021.foodapplication.R;
 import com.example.a11502021.foodapplication.adapters.RecyclerViewAdapter;
+import com.example.a11502021.foodapplication.adapters.ViewHolder;
 import com.example.a11502021.foodapplication.api.Api;
-import com.example.a11502021.foodapplication.api.HitsController;
+import com.example.a11502021.foodapplication.api.HitsContainer;
 import com.example.a11502021.foodapplication.fragments.decoration.GridSpacingItemDecoration;
 import com.example.a11502021.foodapplication.models.Example;
 import com.example.a11502021.foodapplication.models.Hit;
@@ -46,6 +49,7 @@ public class MainFragment extends Fragment {
     private View mView;
     private EditText searchText;
     private Button searchButton;
+    RelativeLayout loadingPanel;
 
     @Nullable
     @Override
@@ -55,13 +59,14 @@ public class MainFragment extends Fragment {
         mView = inflater.inflate(R.layout.mainfragment_layout, container, false);
         searchText = (EditText) mView.findViewById(R.id.search_text);
         searchButton = (Button) mView.findViewById(R.id.search_button);
+        loadingPanel = (RelativeLayout) mView.findViewById(R.id.loadingPanel);
         searchButton.setText("Search");
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mHits.clear();
-                updateRecyclerView();
+                mRecyclerView.setVisibility(View.GONE);
+                loadingPanel.setVisibility(View.VISIBLE);
                 new Thread(new Runnable() {
                     public void run() {
                         ApiGetByKeyword(searchText.getText().toString());
@@ -90,9 +95,11 @@ public class MainFragment extends Fragment {
 
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
-                HitsController.setHits(response.body());
-                initImageBitmaps(HitsController.getHits());
-                Log.d(TAG, "onResponse: " + HitsController.getHits().getCount());
+                HitsContainer.setHits(response.body());
+                initImageBitmaps(HitsContainer.getHits());
+                mRecyclerView.setVisibility(View.VISIBLE);
+                loadingPanel.setVisibility(View.GONE);
+                Log.d(TAG, "onResponse: " + HitsContainer.getHits().getCount());
             }
 
             @Override
@@ -107,6 +114,8 @@ public class MainFragment extends Fragment {
     private void initImageBitmaps(Example hits) {
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
 
+        mHits.clear();
+
         if (hits.getCount() != 0) {
             mHits.addAll(hits.getHits());
         } else {
@@ -114,10 +123,6 @@ public class MainFragment extends Fragment {
         }
 
         updateRecyclerView();
-    }
-
-    private void updateRecyclerView() {
-        mAdapter.notifyDataSetChanged();
     }
 
     private void initRecyclerView() {
@@ -128,6 +133,10 @@ public class MainFragment extends Fragment {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mAdapter = new RecyclerViewAdapter(mHits, getActivity());
         mRecyclerView.setAdapter(mAdapter);
+    }
+
+    private void updateRecyclerView() {
+        mAdapter.notifyDataSetChanged();
     }
 
 }
