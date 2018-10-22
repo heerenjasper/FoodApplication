@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.a11502021.foodapplication.MainActivity;
 import com.example.a11502021.foodapplication.R;
 import com.example.a11502021.foodapplication.models.Hit;
 
@@ -64,9 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>{
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //later to be replaced by logic to go into recipe details
                 Log.d(TAG, "onClick: Clicked on " + mHits.get(i).getRecipe().getLabel());
-                Toast.makeText(mContext, mHits.get(i).getRecipe().getLabel(), Toast.LENGTH_SHORT).show();
             }
         });
     }

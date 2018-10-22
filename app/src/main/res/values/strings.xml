@@ -5,5 +5,10 @@
     <string name="action_play_next">Play Next</string>
     <string name="backdrop_title">LOVE MUSIC</string>
     <string name="backdrop_subtitle">This season top 20 albums</string>
-    <string name="your_recipe_here">Your recipe here...</string>
+    <string name="your_keyword_here">Your keyword here…</string>
+    <string name="add_fav">Add to favourites</string>
+    <string name="day_val">Daily Value</string>
+    <string name="cal_serving">Cal/Serving</string>
+    <string name="recipe_label">Recipe Label</string>
+    <string name="servings">Servings</string>
 </resources>

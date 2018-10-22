@@ -1,8 +1,6 @@
 package com.example.a11502021.foodapplication.fragments;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -14,13 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.a11502021.foodapplication.R;
 import com.example.a11502021.foodapplication.adapters.RecyclerViewAdapter;
-import com.example.a11502021.foodapplication.adapters.ViewHolder;
 import com.example.a11502021.foodapplication.api.Api;
 import com.example.a11502021.foodapplication.api.HitsContainer;
 import com.example.a11502021.foodapplication.fragments.decoration.GridSpacingItemDecoration;
@@ -54,7 +50,7 @@ public class MainFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView: onCreateView.");
+        Log.d(TAG, "onCreateView: Main Fragment Started.");
 
         mView = inflater.inflate(R.layout.mainfragment_layout, container, false);
         searchText = (EditText) mView.findViewById(R.id.search_text);
@@ -95,15 +91,18 @@ public class MainFragment extends Fragment {
 
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
-                HitsContainer.setHits(response.body());
-                initImageBitmaps(HitsContainer.getHits());
+                //HitsContainer.setHits(response.body());
+                //initImageBitmaps(HitsContainer.getHits());
+                initImageBitmaps(response.body());
                 mRecyclerView.setVisibility(View.VISIBLE);
                 loadingPanel.setVisibility(View.GONE);
-                Log.d(TAG, "onResponse: " + HitsContainer.getHits().getCount());
+                //Log.d(TAG, "onResponse: " + HitsContainer.getHits().getCount());
             }
 
             @Override
             public void onFailure(Call<Example> call, Throwable t) {
+                loadingPanel.setVisibility(View.GONE);
+                Toast.makeText(getContext(), "Error connecting to API.", Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "onFailure: the call failed.");
                 Log.d(TAG, t.getMessage());
             }
