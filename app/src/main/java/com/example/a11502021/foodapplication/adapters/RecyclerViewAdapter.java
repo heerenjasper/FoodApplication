@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.a11502021.foodapplication.MainActivity;
 import com.example.a11502021.foodapplication.R;
+import com.example.a11502021.foodapplication.fragments.DetailsFragment;
 import com.example.a11502021.foodapplication.models.Hit;
 
 import java.util.ArrayList;
@@ -66,6 +67,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>{
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: Clicked on " + mHits.get(i).getRecipe().getLabel());
+                Toast.makeText(mContext, mHits.get(i).getRecipe().getLabel(), Toast.LENGTH_SHORT).show();
+                // elk item krijgt hier een onclick actie.
+                // vanuit hier naar detailsfragment navigeren (via methode in MainActivity)
+                // in DetailsFragment de values van de textviews aanpassen aan de values van deze specifieke Hit uit de RecyclerView.
+                MainActivity mainActivity = (MainActivity) mContext;
+                DetailsFragment detailsFragment = (DetailsFragment) mainActivity.getmRecipesStatePagerAdapter().getItem(1);
+                detailsFragment.updateValues(mHits.get(i));
+                mainActivity.setViewPager(1);
             }
         });
     }

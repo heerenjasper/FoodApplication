@@ -91,12 +91,9 @@ public class MainFragment extends Fragment {
 
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
-                //HitsContainer.setHits(response.body());
-                //initImageBitmaps(HitsContainer.getHits());
                 initImageBitmaps(response.body());
                 mRecyclerView.setVisibility(View.VISIBLE);
                 loadingPanel.setVisibility(View.GONE);
-                //Log.d(TAG, "onResponse: " + HitsContainer.getHits().getCount());
             }
 
             @Override

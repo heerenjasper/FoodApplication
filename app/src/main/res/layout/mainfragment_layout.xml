@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,14 +10,18 @@
 
     <EditText
         android:id="@+id/search_text"
+        android:layout_marginTop="8dp"
         android:layout_width="300dp"
         android:layout_height="44dp"
         android:hint="@string/your_keyword_here"/>
 
     <Button
+        android:textColor="#fff"
+        android:background="@drawable/buttonstyle"
+        android:layout_marginTop="8dp"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        app:layout_constraintLeft_toRightOf="@+id/search_text"
+        android:layout_toEndOf="@+id/search_text"
         android:id="@+id/search_button"/>
 
     <RelativeLayout
@@ -37,10 +41,10 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:clipToPadding="false"
         android:scrollbars="vertical"
         android:id="@+id/recyclerv_view">
     </android.support.v7.widget.RecyclerView>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

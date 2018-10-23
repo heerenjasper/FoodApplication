@@ -1,5 +1,7 @@
 package com.example.a11502021.foodapplication;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,11 +34,16 @@ public class MainActivity extends AppCompatActivity {
         RecipesStatePagerAdapter adapter = new RecipesStatePagerAdapter(getSupportFragmentManager());
         adapter.AddFragment(new MainFragment(), "Main");
         adapter.AddFragment(new DetailsFragment(), "Details");
-        viewpager.setAdapter(adapter);
+        mRecipesStatePagerAdapter = adapter;
+        viewpager.setAdapter(mRecipesStatePagerAdapter);
     }
 
-    public void setViewPager(int fragmentIndex, Hit hit) {
+    public void setViewPager(int fragmentIndex) {
         mViewPager.setCurrentItem(fragmentIndex);
+    }
+
+    public RecipesStatePagerAdapter getmRecipesStatePagerAdapter() {
+        return this.mRecipesStatePagerAdapter;
     }
 
 }
