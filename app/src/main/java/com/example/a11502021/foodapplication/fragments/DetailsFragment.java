@@ -3,7 +3,6 @@ package com.example.a11502021.foodapplication.fragments;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.button.MaterialButton;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -56,17 +55,15 @@ public class DetailsFragment extends Fragment {
 
     @SuppressLint("SetTextI18n")
     public void updateValues(Hit hit) {
-        if (getContext() != null) {
             Glide.with(getContext())
                     .asBitmap()
                     .load(hit.getRecipe().getImage())
-                    .into(image);
-        }
-        recipeLabel.setText(hit.getRecipe().getLabel());
-        caloriesCount.setText(Math.round(hit.getRecipe().getCalories().intValue() /
-                hit.getRecipe().getYield()) + "");
-        //dailyValue.setText(hit.getRecipe().getTotalDaily().getPROCNT().getLabel());
-        servings.setText(hit.getRecipe().getYield().toString());
+                    .into(this.image);
+            this.recipeLabel.setText(hit.getRecipe().getLabel());
+            this.caloriesCount.setText(Math.round(hit.getRecipe().getCalories().intValue() /
+                    hit.getRecipe().getYield()) + "");
+            //dailyValue.setText(hit.getRecipe().getTotalDaily().getPROCNT().toString());
+            this.servings.setText(hit.getRecipe().getYield().toString());
     }
 
 }

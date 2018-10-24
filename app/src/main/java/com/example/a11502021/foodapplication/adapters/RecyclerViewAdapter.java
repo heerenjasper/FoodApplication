@@ -72,7 +72,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>{
                 // vanuit hier naar detailsfragment navigeren (via methode in MainActivity)
                 // in DetailsFragment de values van de textviews aanpassen aan de values van deze specifieke Hit uit de RecyclerView.
                 MainActivity mainActivity = (MainActivity) mContext;
-                DetailsFragment detailsFragment = (DetailsFragment) mainActivity.getmRecipesStatePagerAdapter().getItem(1);
+                DetailsFragment detailsFragment;
+                detailsFragment = (DetailsFragment) mainActivity.getmRecipesStatePagerAdapter().getItem(1);
                 detailsFragment.updateValues(mHits.get(i));
                 mainActivity.setViewPager(1);
             }

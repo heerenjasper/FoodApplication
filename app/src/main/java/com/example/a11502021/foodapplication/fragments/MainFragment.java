@@ -24,6 +24,8 @@ import com.example.a11502021.foodapplication.models.Example;
 import com.example.a11502021.foodapplication.models.Hit;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
