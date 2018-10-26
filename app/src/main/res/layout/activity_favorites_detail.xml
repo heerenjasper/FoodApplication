@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FavoritesDetailActivity">
+
+    <!-- TODO 3 ADD FRAGMENT TO TO LAYOUT FILE -->
+    <fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesDetailFragment"
+        android:id="@+id/favorites_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <!-- END -->
+
+</android.support.design.widget.CoordinatorLayout>

@@ -7,8 +7,11 @@
     <string name="backdrop_subtitle">This season top 20 albums</string>
     <string name="your_keyword_here">Your keyword here…</string>
     <string name="add_fav">Add to favourites</string>
-    <string name="day_val">Daily Value</string>
     <string name="cal_serving">Cal/Serving</string>
     <string name="recipe_label">Recipe Label</string>
     <string name="servings">Servings</string>
+    <string name="publisher">Publisher</string>
+    <string name="search">Search</string>
+    <string name="title_activity_favorites">FavoritesActivity</string>
+    <string name="title_activity_favorites_detail">FavoritesDetailActivity</string>
 </resources>

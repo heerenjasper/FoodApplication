@@ -28,7 +28,7 @@ public class DetailsFragment extends Fragment {
     private View mView;
     private CircleImageView image;
     private Button addToFavourites;
-    private TextView recipeLabel, caloriesCount, dailyValue, servings;
+    private TextView recipeLabel, caloriesCount, publisher, servings;
 
     @Nullable
     @Override
@@ -40,7 +40,7 @@ public class DetailsFragment extends Fragment {
         recipeLabel = (TextView) mView.findViewById(R.id.detailfrag_recipe_name);
         addToFavourites = (Button) mView.findViewById(R.id.detailfrag_add_to_favourites);
         caloriesCount = (TextView) mView.findViewById(R.id.detailfrag_cal);
-        dailyValue = (TextView) mView.findViewById(R.id.detailfrag_daily_value);
+        publisher = (TextView) mView.findViewById(R.id.detailfrag_publisher);
         servings = (TextView) mView.findViewById(R.id.detailfrag_servings);
 
         addToFavourites.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +62,7 @@ public class DetailsFragment extends Fragment {
             this.recipeLabel.setText(hit.getRecipe().getLabel());
             this.caloriesCount.setText(Math.round(hit.getRecipe().getCalories().intValue() /
                     hit.getRecipe().getYield()) + "");
-            //dailyValue.setText(hit.getRecipe().getTotalDaily().getPROCNT().toString());
+            this.publisher.setText(hit.getRecipe().getSource());
             this.servings.setText(hit.getRecipe().getYield().toString());
     }
 

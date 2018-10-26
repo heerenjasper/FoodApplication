@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Portait" />
+
+        <!-- TODO 2. ADD FRAGMENT TO TO LAYOUT FILE -->
+        <fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesListFragment"
+            android:id="@+id/favorites_list"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+        <!-- END -->
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

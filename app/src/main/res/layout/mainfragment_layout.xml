@@ -23,7 +23,8 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_toEndOf="@+id/search_text"
-        android:id="@+id/search_button"/>
+        android:id="@+id/search_button"
+        android:text="@string/search"/>
 
     <RelativeLayout
         android:id="@+id/loadingPanel"

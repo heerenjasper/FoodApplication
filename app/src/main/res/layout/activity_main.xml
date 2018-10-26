@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main_portrait"
     tools:context="com.example.a11502021.foodapplication.MainActivity">
 
     <android.support.v4.view.ViewPager

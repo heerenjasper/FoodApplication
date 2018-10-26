@@ -1,22 +1,20 @@
 package com.example.a11502021.foodapplication;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.a11502021.foodapplication.adapters.RecipesStatePagerAdapter;
+import com.example.a11502021.foodapplication.adapters.StatePagerAdapter;
 import com.example.a11502021.foodapplication.fragments.DetailsFragment;
 import com.example.a11502021.foodapplication.fragments.MainFragment;
-import com.example.a11502021.foodapplication.models.Hit;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    private RecipesStatePagerAdapter mRecipesStatePagerAdapter;
+    private StatePagerAdapter mStatePagerAdapter;
     private ViewPager mViewPager;
+    private boolean mTwoPane;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,26 +22,26 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        mRecipesStatePagerAdapter = new RecipesStatePagerAdapter(getSupportFragmentManager());
+        mStatePagerAdapter = new StatePagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.container);
 
         setupViewPager(mViewPager);
     }
 
     private void setupViewPager(ViewPager viewpager) {
-        RecipesStatePagerAdapter adapter = new RecipesStatePagerAdapter(getSupportFragmentManager());
+        StatePagerAdapter adapter = new StatePagerAdapter(getSupportFragmentManager());
         adapter.AddFragment(new MainFragment(), "Main");
         adapter.AddFragment(new DetailsFragment(), "Details");
-        mRecipesStatePagerAdapter = adapter;
-        viewpager.setAdapter(mRecipesStatePagerAdapter);
+        mStatePagerAdapter = adapter;
+        viewpager.setAdapter(mStatePagerAdapter);
     }
 
     public void setViewPager(int fragmentIndex) {
         mViewPager.setCurrentItem(fragmentIndex);
     }
 
-    public RecipesStatePagerAdapter getmRecipesStatePagerAdapter() {
-        return this.mRecipesStatePagerAdapter;
+    public StatePagerAdapter getmStatePagerAdapter() {
+        return this.mStatePagerAdapter;
     }
 
 }

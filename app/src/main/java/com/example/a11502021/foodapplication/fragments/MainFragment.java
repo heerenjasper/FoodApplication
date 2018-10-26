@@ -16,16 +16,13 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.a11502021.foodapplication.R;
-import com.example.a11502021.foodapplication.adapters.RecyclerViewAdapter;
+import com.example.a11502021.foodapplication.adapters.RecipeRecyclerViewAdapter;
 import com.example.a11502021.foodapplication.api.Api;
-import com.example.a11502021.foodapplication.api.HitsContainer;
 import com.example.a11502021.foodapplication.fragments.decoration.GridSpacingItemDecoration;
 import com.example.a11502021.foodapplication.models.Example;
 import com.example.a11502021.foodapplication.models.Hit;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,7 +40,7 @@ public class MainFragment extends Fragment {
     // controls declaration here
     private ArrayList<Hit> mHits = new ArrayList<>();
     RecyclerView mRecyclerView;
-    RecyclerViewAdapter mAdapter;
+    RecipeRecyclerViewAdapter mAdapter;
     private View mView;
     private EditText searchText;
     private Button searchButton;
@@ -58,7 +55,6 @@ public class MainFragment extends Fragment {
         searchText = (EditText) mView.findViewById(R.id.search_text);
         searchButton = (Button) mView.findViewById(R.id.search_button);
         loadingPanel = (RelativeLayout) mView.findViewById(R.id.loadingPanel);
-        searchButton.setText("Search");
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +125,7 @@ public class MainFragment extends Fragment {
         mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(2, 10, true, getResources()));
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mAdapter = new RecyclerViewAdapter(mHits, getActivity());
+        mAdapter = new RecipeRecyclerViewAdapter(mHits, getActivity());
         mRecyclerView.setAdapter(mAdapter);
     }
 
