@@ -14,4 +14,5 @@
     <string name="search">Search</string>
     <string name="title_activity_favorites">FavoritesActivity</string>
     <string name="title_activity_favorites_detail">FavoritesDetailActivity</string>
+    <string name="favorites">Favorites</string>
 </resources>

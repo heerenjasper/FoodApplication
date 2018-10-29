@@ -1,5 +1,6 @@
 package com.example.a11502021.foodapplication.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.a11502021.foodapplication.FavoritesActivity;
 import com.example.a11502021.foodapplication.R;
 import com.example.a11502021.foodapplication.adapters.RecipeRecyclerViewAdapter;
 import com.example.a11502021.foodapplication.api.Api;
@@ -43,7 +45,7 @@ public class MainFragment extends Fragment {
     RecipeRecyclerViewAdapter mAdapter;
     private View mView;
     private EditText searchText;
-    private Button searchButton;
+    private Button searchButton, favoritesButton;
     RelativeLayout loadingPanel;
 
     @Nullable
@@ -54,6 +56,7 @@ public class MainFragment extends Fragment {
         mView = inflater.inflate(R.layout.mainfragment_layout, container, false);
         searchText = (EditText) mView.findViewById(R.id.search_text);
         searchButton = (Button) mView.findViewById(R.id.search_button);
+        favoritesButton = (Button) mView.findViewById(R.id.favorites_button);
         loadingPanel = (RelativeLayout) mView.findViewById(R.id.loadingPanel);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +69,14 @@ public class MainFragment extends Fragment {
                         ApiGetByKeyword(searchText.getText().toString());
                     }
                 }).start();
+            }
+        });
+
+        favoritesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), FavoritesActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -89,7 +100,7 @@ public class MainFragment extends Fragment {
 
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
-                initImageBitmaps(response.body());
+                initHits(response.body());
                 mRecyclerView.setVisibility(View.VISIBLE);
                 loadingPanel.setVisibility(View.GONE);
             }
@@ -105,7 +116,7 @@ public class MainFragment extends Fragment {
         });
     }
 
-    private void initImageBitmaps(Example hits) {
+    private void initHits(Example hits) {
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
 
         mHits.clear();
