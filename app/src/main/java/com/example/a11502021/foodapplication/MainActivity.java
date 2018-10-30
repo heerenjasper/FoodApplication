@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     private StatePagerAdapter mStatePagerAdapter;
     private ViewPager mViewPager;
-    private boolean mTwoPane;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

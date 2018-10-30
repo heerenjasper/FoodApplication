@@ -33,17 +33,23 @@
             <fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesListFragment"
                 android:id="@+id/favorites_list"
                 android:layout_width="0dp"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 android:layout_height="match_parent"/>
             <!-- END -->
 
-            <!-- TODO 2B. ADD FRAGMENT TO TO LAYOUT FILE -->
+            <!-- TODO 2B. ADD FRAGMENT TO TO LAYOUT FILE
             <fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesDetailFragment"
                 android:id="@+id/favorites_detail"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="match_parent"/>
-            <!-- END -->
+            END -->
+
+            <fragment android:name="com.example.a11502021.foodapplication.fragments.DetailsFragment"
+                android:id="@+id/favorites_detail"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent"/>
 
         </LinearLayout>
 

@@ -7,10 +7,16 @@
     tools:context=".FavoritesDetailActivity">
 
     <!-- TODO 3 ADD FRAGMENT TO TO LAYOUT FILE -->
-    <fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesDetailFragment"
+    <!--<fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesDetailFragment"
         android:id="@+id/favorites_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-    <!-- END -->
+     END -->
+
+    <fragment android:name="com.example.a11502021.foodapplication.fragments.DetailsFragment"
+        android:id="@+id/favorites_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
 </android.support.design.widget.CoordinatorLayout>

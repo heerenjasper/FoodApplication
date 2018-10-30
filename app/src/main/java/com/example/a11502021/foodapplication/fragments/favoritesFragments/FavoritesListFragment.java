@@ -7,6 +7,8 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -18,6 +20,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.baoyz.swipemenulistview.SwipeMenu;
+import com.baoyz.swipemenulistview.SwipeMenuCreator;
+import com.baoyz.swipemenulistview.SwipeMenuItem;
+import com.baoyz.swipemenulistview.SwipeMenuListView;
 import com.example.a11502021.foodapplication.FavoritesDetailActivity;
 import com.example.a11502021.foodapplication.R;
 import com.example.a11502021.foodapplication.adapters.FavoritesListAdapter;
@@ -38,7 +44,7 @@ import java.util.List;
      FavoritesListAdapter adapter;
 
      private DatabaseHelper dbHelper;
-     ListView listView;
+     SwipeMenuListView listView;
 
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,11 +57,33 @@ import java.util.List;
      public void onActivityCreated(@Nullable Bundle savedInstanceState) {
          super.onActivityCreated(savedInstanceState);
 
-         listView = (ListView) getView().findViewById(R.id.favorites_listView);
+         listView = (SwipeMenuListView) getView().findViewById(R.id.favorites_listView);
          adapter = new FavoritesListAdapter(getContext(), R.layout.favorites_adapterview_layout, listItems);
          listView.setAdapter(adapter);
 
          dbHelper = new DatabaseHelper(this.getContext());
+
+         SwipeMenuCreator creator = new SwipeMenuCreator() {
+
+             @Override
+             public void create(SwipeMenu menu) {
+                 SwipeMenuItem deleteItem = new SwipeMenuItem(
+                         getContext());
+                 deleteItem.setWidth(250);
+                 deleteItem.setIcon(R.drawable.ic_delete);
+                 menu.addMenuItem(deleteItem);
+             }
+         };
+
+         listView.setMenuCreator(creator);
+
+         listView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
+             @Override
+             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
+                 Toast.makeText(getContext(), "Deleted " + listItems.get(position).getRecipe().getLabel() + " from favorites.", Toast.LENGTH_SHORT).show();
+                 return false;
+             }
+         });
 
          getAllFavorites();
 

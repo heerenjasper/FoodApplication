@@ -46,7 +46,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getData() {
         SQLiteDatabase db = this.getWritableDatabase();
+
         String query = "SELECT * FROM " + RecipeContract.RecipeEntry.TABLE_NAME;
+
         Cursor data = db.rawQuery(query, null);
         return data;
     }
@@ -70,6 +72,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } else {
             return true;
         }*/
+
+       db.close();
 
        return result != -1;
     }
