@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.a11502021.foodapplication.MainActivity;
 import com.example.a11502021.foodapplication.R;
+import com.example.a11502021.foodapplication.database.DatabaseHelper;
 import com.example.a11502021.foodapplication.fragments.DetailsFragment;
 import com.example.a11502021.foodapplication.models.Hit;
 
@@ -31,10 +32,12 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeCardVi
 
     private ArrayList<Hit> mHits = new ArrayList<>();
     private Context mContext;
+    private DatabaseHelper dbHelper;
 
     public RecipeRecyclerViewAdapter(ArrayList<Hit> mHits, Context mContext) {
         this.mHits = mHits;
         this.mContext = mContext;
+        dbHelper = new DatabaseHelper(mContext);
     }
 
     @NonNull
@@ -59,7 +62,7 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeCardVi
         recipeCardViewHolder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPopupMenu(recipeCardViewHolder.overflow);
+                showPopupMenu(recipeCardViewHolder.overflow, mHits.get(i));
             }
         });
 
@@ -77,25 +80,33 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeCardVi
         });
     }
 
-    private void showPopupMenu(View view) {
+    private void showPopupMenu(View view, Hit currentHit) {
         // inflate menu
         PopupMenu popup = new PopupMenu(mContext, view);
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.menu_album, popup.getMenu());
-        popup.setOnMenuItemClickListener(new MyMenuItemClickListener());
+        popup.setOnMenuItemClickListener(new MyMenuItemClickListener(currentHit));
         popup.show();
     }
 
     class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener {
 
-        public MyMenuItemClickListener() {
+        private Hit currentHit;
+
+        MyMenuItemClickListener(Hit hit) {
+            this.currentHit = hit;
         }
 
         @Override
         public boolean onMenuItemClick(MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.action_add_favourite:
-                    Toast.makeText(mContext, "Added to favourites", Toast.LENGTH_SHORT).show();
+                    boolean insertHit = dbHelper.addData(currentHit);
+                    if (insertHit) {
+                        Toast.makeText(mContext, "Added " + currentHit.getRecipe().getLabel() + " to favorites.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(mContext, "Error adding to favorites.", Toast.LENGTH_SHORT).show();
+                    }
                     return true;
                 default:
             }

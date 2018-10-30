@@ -22,7 +22,7 @@
         <fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesListFragment"
             android:id="@+id/favorites_list"
             android:layout_width="match_parent"
-            android:layout_height="100dp"/>
+            android:layout_height="match_parent"/>
         <!-- END -->
 
     </LinearLayout>

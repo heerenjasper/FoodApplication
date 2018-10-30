@@ -34,7 +34,7 @@
                 android:id="@+id/favorites_list"
                 android:layout_width="0dp"
                 android:layout_weight="5"
-                android:layout_height="100dp"/>
+                android:layout_height="match_parent"/>
             <!-- END -->
 
             <!-- TODO 2B. ADD FRAGMENT TO TO LAYOUT FILE -->
@@ -42,7 +42,7 @@
                 android:id="@+id/favorites_detail"
                 android:layout_width="0dp"
                 android:layout_weight="3"
-                android:layout_height="100dp"/>
+                android:layout_height="match_parent"/>
             <!-- END -->
 
         </LinearLayout>

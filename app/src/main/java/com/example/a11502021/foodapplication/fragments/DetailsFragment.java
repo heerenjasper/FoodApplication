@@ -14,7 +14,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.a11502021.foodapplication.R;
+import com.example.a11502021.foodapplication.database.DatabaseHelper;
 import com.example.a11502021.foodapplication.models.Hit;
+import com.example.a11502021.foodapplication.models.Recipe;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -29,6 +31,8 @@ public class DetailsFragment extends Fragment {
     private CircleImageView image;
     private Button addToFavourites;
     private TextView recipeLabel, caloriesCount, publisher, servings;
+    private Hit currentHit;
+    private DatabaseHelper dbHelper;
 
     @Nullable
     @Override
@@ -43,10 +47,17 @@ public class DetailsFragment extends Fragment {
         publisher = (TextView) mView.findViewById(R.id.detailfrag_publisher);
         servings = (TextView) mView.findViewById(R.id.detailfrag_servings);
 
+        dbHelper = new DatabaseHelper(this.getContext());
+
         addToFavourites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Add to favourites", Toast.LENGTH_SHORT).show();
+                boolean insertHit = dbHelper.addData(currentHit);
+                if (insertHit) {
+                    Toast.makeText(getContext(), "Added " + currentHit.getRecipe().getLabel() + " to favorites.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), "Error adding to favorites.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -64,6 +75,7 @@ public class DetailsFragment extends Fragment {
                     hit.getRecipe().getYield()) + "");
             this.publisher.setText(hit.getRecipe().getSource());
             this.servings.setText(hit.getRecipe().getYield().toString());
+            this.currentHit = hit;
     }
 
 }

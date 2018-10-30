@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.a11502021.foodapplication.FavoritesDetailActivity;
 import com.example.a11502021.foodapplication.R;
+import com.example.a11502021.foodapplication.adapters.FavoritesListAdapter;
 import com.example.a11502021.foodapplication.database.DatabaseHelper;
 import com.example.a11502021.foodapplication.database.RecipeContract;
 import com.example.a11502021.foodapplication.models.Hit;
@@ -30,11 +31,11 @@ import java.util.List;
 
  public class FavoritesListFragment extends Fragment {
 
-     //LIST OF ARRAY STRINGS WHICH WILL SERVE AS LIST ITEMS
+     //LIST OF ARRAY HITS WHICH WILL SERVE AS LIST ITEMS
      ArrayList<Hit> listItems = new ArrayList<>();
 
-     //DEFINING A STRING ADAPTER WHICH WILL HANDLE THE DATA OF THE LISTVIEW
-     ArrayAdapter<Hit> adapter;
+     //DEFINING A HIT ADAPTER WHICH WILL HANDLE THE DATA OF THE LISTVIEW
+     FavoritesListAdapter adapter;
 
      private DatabaseHelper dbHelper;
      ListView listView;
@@ -51,14 +52,14 @@ import java.util.List;
          super.onActivityCreated(savedInstanceState);
 
          listView = (ListView) getView().findViewById(R.id.favorites_listView);
-         adapter = new ArrayAdapter<>(this.getContext(), R.layout.layout_listitem, listItems);
+         adapter = new FavoritesListAdapter(getContext(), R.layout.favorites_adapterview_layout, listItems);
          listView.setAdapter(adapter);
 
          dbHelper = new DatabaseHelper(this.getContext());
 
          getAllFavorites();
 
-         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+         /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
              @Override
              public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                  String item = (String)listView.getItemAtPosition(i);
@@ -68,7 +69,7 @@ import java.util.List;
                  if (favoritesDetailFragment != null && favoritesDetailFragment.isVisible()) {
                      // Visible: send bundle
                      FavoritesDetailFragment newFragment = new FavoritesDetailFragment();
-                     Bundle bundle=new Bundle();
+                     Bundle bundle = new Bundle();
                      bundle.putString("item", item);
                      newFragment.setArguments(bundle);
 
@@ -87,7 +88,7 @@ import java.util.List;
                  }
 
              }
-         });
+         });*/
      }
 
      public void updateList() {
@@ -111,5 +112,6 @@ import java.util.List;
          }
          updateList();
      }
+
  }
 

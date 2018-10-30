@@ -1,9 +1,13 @@
 package com.example.a11502021.foodapplication.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import com.example.a11502021.foodapplication.models.Hit;
 
 /**
  * Created by 11502021 on 26/10/2018.
@@ -45,5 +49,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query = "SELECT * FROM " + RecipeContract.RecipeEntry.TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
         return data;
+    }
+
+    public boolean addData(Hit hit) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(RecipeContract.RecipeEntry.LABEL, hit.getRecipe().getLabel());
+        contentValues.put(RecipeContract.RecipeEntry.IMAGE, hit.getRecipe().getImage());
+        contentValues.put(RecipeContract.RecipeEntry.PUBLISHER, hit.getRecipe().getSource());
+        contentValues.put(RecipeContract.RecipeEntry.CALORIES, hit.getRecipe().getCalories());
+        contentValues.put(RecipeContract.RecipeEntry.SERVINGS, hit.getRecipe().getYield());
+
+        Log.d(TAG, "addData: " + "Adding " + hit.getRecipe().getLabel() + " to " + RecipeContract.RecipeEntry.TABLE_NAME);
+
+        long result = db.insert(RecipeContract.RecipeEntry.TABLE_NAME, null, contentValues);
+
+       /* if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }*/
+
+       return result != -1;
     }
 }
