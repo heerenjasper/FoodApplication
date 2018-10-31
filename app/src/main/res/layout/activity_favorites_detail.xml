@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavoritesDetailActivity">
+    tools:context=".DetailActivity">
 
     <!-- TODO 3 ADD FRAGMENT TO TO LAYOUT FILE -->
     <!--<fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesDetailFragment"

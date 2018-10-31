@@ -2,6 +2,7 @@ package com.example.a11502021.foodapplication.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -14,11 +15,11 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.a11502021.foodapplication.MainActivity;
+import com.example.a11502021.foodapplication.DetailActivity;
 import com.example.a11502021.foodapplication.R;
 import com.example.a11502021.foodapplication.database.DatabaseHelper;
-import com.example.a11502021.foodapplication.fragments.DetailsFragment;
 import com.example.a11502021.foodapplication.models.Hit;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -70,12 +71,22 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeCardVi
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: Clicked on " + mHits.get(i).getRecipe().getLabel());
-
+/*
                 MainActivity mainActivity = (MainActivity) mContext;
                 DetailsFragment detailsFragment;
-                detailsFragment = (DetailsFragment) mainActivity.getmStatePagerAdapter().getItem(1);
+                //detailsFragment = (DetailsFragment) mainActivity.getmStatePagerAdapter().getItem(1);
+                detailsFragment = (DetailsFragment) mainActivity.getFragmentManager().findFragmentById(R.id.favorites_detail);
                 detailsFragment.updateValues(mHits.get(i));
-                mainActivity.setViewPager(1);
+                mainActivity.setViewPager(1);*/
+
+                Intent intent = new Intent(mContext, DetailActivity.class);
+                intent.putExtra("hit", (new Gson()).toJson(mHits.get(i)));
+                //intent.putExtra("label", mHits.get(i).getRecipe().getLabel());
+               //intent.putExtra("image", mHits.get(i).getRecipe().getImage());
+                //intent.putExtra("publisher", mHits.get(i).getRecipe().getSource());
+                //intent.putExtra("calories", (mHits.get(i).getRecipe().getCalories().intValue() / mHits.get(i).getRecipe().getYield()) + "");
+                //intent.putExtra("servings", mHits.get(i).getRecipe().getYield().toString());
+                mContext.startActivity(intent);
             }
         });
     }

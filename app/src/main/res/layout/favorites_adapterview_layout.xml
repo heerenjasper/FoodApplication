@@ -3,16 +3,16 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="100">
+    android:weightSum="100"
+    android:padding="3dp">
 
-
-    <TextView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:gravity="center"
         android:textAlignment="center"
-        android:text="TextView1"
+        android:src="@mipmap/ic_launcher"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:id="@+id/textView1"
+        android:id="@+id/cvImage"
         android:layout_weight="66.6"/>
 
     <LinearLayout
@@ -23,18 +23,18 @@
 
         <TextView
             android:gravity="center"
-            android:text="TextView2"
+            android:text="@string/recipe_label"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:id="@+id/textView2"/>
+            android:id="@+id/tvLabel"/>
 
         <TextView
             android:gravity="center"
-            android:text="TextView3"
+            android:text="@string/publisher"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:id="@+id/textView3"
-            android:layout_below="@+id/textView2"/>
+            android:id="@+id/tvPublisher"
+            android:layout_below="@+id/tvLabel"/>
     </LinearLayout>
 
 </LinearLayout>

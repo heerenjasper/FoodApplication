@@ -6,35 +6,29 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
-import com.example.a11502021.foodapplication.FavoritesDetailActivity;
+import com.example.a11502021.foodapplication.DetailActivity;
 import com.example.a11502021.foodapplication.R;
 import com.example.a11502021.foodapplication.adapters.FavoritesListAdapter;
 import com.example.a11502021.foodapplication.database.DatabaseHelper;
 import com.example.a11502021.foodapplication.database.RecipeContract;
+import com.example.a11502021.foodapplication.fragments.DetailsFragment;
 import com.example.a11502021.foodapplication.models.Hit;
 import com.example.a11502021.foodapplication.models.Recipe;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.List;
-
  public class FavoritesListFragment extends Fragment {
 
      //LIST OF ARRAY HITS WHICH WILL SERVE AS LIST ITEMS
@@ -87,22 +81,22 @@ import java.util.List;
 
          getAllFavorites();
 
-         /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
              @Override
              public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                 String item = (String)listView.getItemAtPosition(i);
-                 Toast.makeText(getActivity(), item, Toast.LENGTH_SHORT).show();
+                 Hit item = (Hit)listView.getItemAtPosition(i);
+                 Toast.makeText(getActivity(), item.getRecipe().getLabel(), Toast.LENGTH_SHORT).show();
 
-                 FavoritesDetailFragment favoritesDetailFragment = (FavoritesDetailFragment) getFragmentManager().findFragmentById(R.id.favorites_detail);
-                 if (favoritesDetailFragment != null && favoritesDetailFragment.isVisible()) {
+                 DetailsFragment detailFragment = (DetailsFragment) getFragmentManager().findFragmentById(R.id.favorites_detail);
+                 if (detailFragment != null && detailFragment.isVisible()) {
                      // Visible: send bundle
-                     FavoritesDetailFragment newFragment = new FavoritesDetailFragment();
+                     DetailsFragment newFragment = new DetailsFragment();
                      Bundle bundle = new Bundle();
-                     bundle.putString("item", item);
+                     bundle.putString("hit", (new Gson()).toJson(item));
                      newFragment.setArguments(bundle);
 
                      FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                     transaction.replace(favoritesDetailFragment.getId(), newFragment);
+                     transaction.replace(detailFragment.getId(), newFragment);
                      transaction.addToBackStack(null);
 
                      // Commit the transaction
@@ -110,13 +104,13 @@ import java.util.List;
                  }
                  else {
                      // Not visible: start as intent
-                     Intent intent = new Intent(getActivity().getBaseContext(), FavoritesDetailActivity.class);
-                     intent.putExtra("item", item);
+                     Intent intent = new Intent(getActivity().getBaseContext(), DetailActivity.class);
+                     intent.putExtra("hit", (new Gson()).toJson(item));
                      getActivity().startActivity(intent);
                  }
 
              }
-         });*/
+         });
      }
 
      public void updateList() {
@@ -129,8 +123,8 @@ import java.util.List;
             Recipe recipe = new Recipe();
             recipe.setLabel(data.getString(data.getColumnIndex(RecipeContract.RecipeEntry.LABEL)));
             recipe.setImage(data.getString(data.getColumnIndex(RecipeContract.RecipeEntry.IMAGE)));
-            recipe.setCalories(data.getDouble(data.getColumnIndex(RecipeContract.RecipeEntry.CALORIES)));
             recipe.setSource(data.getString(data.getColumnIndex(RecipeContract.RecipeEntry.PUBLISHER)));
+            recipe.setCalories(data.getDouble(data.getColumnIndex(RecipeContract.RecipeEntry.CALORIES)));
             recipe.setYield(data.getInt(data.getColumnIndex(RecipeContract.RecipeEntry.SERVINGS)));
 
             Hit hit = new Hit();
@@ -138,6 +132,7 @@ import java.util.List;
 
             listItems.add(hit);
          }
+         data.close();
          updateList();
      }
 

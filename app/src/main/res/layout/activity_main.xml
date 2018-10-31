@@ -7,10 +7,15 @@
     android:id="@+id/main_portrait"
     tools:context="com.example.a11502021.foodapplication.MainActivity">
 
-    <android.support.v4.view.ViewPager
+    <!--<android.support.v4.view.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/container">
-    </android.support.v4.view.ViewPager>
+    </android.support.v4.view.ViewPager>-->
+
+    <fragment android:name="com.example.a11502021.foodapplication.fragments.MainFragment"
+        android:id="@+id/main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </android.support.constraint.ConstraintLayout>
