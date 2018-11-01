@@ -28,7 +28,8 @@
         <activity
             android:name=".DetailActivity"
             android:label="@string/title_activity_favorites_detail"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:configChanges="locale|keyboard|keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

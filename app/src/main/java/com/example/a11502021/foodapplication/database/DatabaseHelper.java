@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.a11502021.foodapplication.models.Hit;
 
@@ -18,10 +19,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = "DatabaseHelper";
 
     private static final String DB_NAME = "favorites";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 2;
+    private Context context;
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
+        this.context = context;
     }
 
     @Override
@@ -32,7 +35,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 RecipeContract.RecipeEntry.IMAGE + " TEXT NOT NULL, " +
                 RecipeContract.RecipeEntry.PUBLISHER + " TEXT NOT NULL, " +
                 RecipeContract.RecipeEntry.CALORIES + " REAL NOT NULL, " +
-                RecipeContract.RecipeEntry.SERVINGS + " INTEGER NOT NULL" +
+                RecipeContract.RecipeEntry.SERVINGS + " INTEGER NOT NULL, " +
+                RecipeContract.RecipeEntry.URL + " TEXT NOT NULL" +
                 ");";
 
         sqLiteDatabase.execSQL(SQL_CREATE_FAVORITES_TABLE);
@@ -62,6 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(RecipeContract.RecipeEntry.PUBLISHER, hit.getRecipe().getSource());
         contentValues.put(RecipeContract.RecipeEntry.CALORIES, hit.getRecipe().getCalories());
         contentValues.put(RecipeContract.RecipeEntry.SERVINGS, hit.getRecipe().getYield());
+        contentValues.put(RecipeContract.RecipeEntry.URL, hit.getRecipe().getUrl());
 
         Log.d(TAG, "addData: " + "Adding " + hit.getRecipe().getLabel() + " to " + RecipeContract.RecipeEntry.TABLE_NAME);
 
@@ -76,5 +81,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
        db.close();
 
        return result != -1;
+    }
+
+    public void deleteData(Hit hit) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "DELETE FROM " + RecipeContract.RecipeEntry.TABLE_NAME + " WHERE "
+                + RecipeContract.RecipeEntry.URL + " = '" + hit.getRecipe().getUrl()
+                + "' AND " + RecipeContract.RecipeEntry.LABEL + " = '" + hit.getRecipe().getLabel() + "'";
+
+        Log.d(TAG, "deleteData: Query: " + query);
+        Log.d(TAG, "deleteData: Deleting " + hit.getRecipe().getLabel() + " from database.");
+
+        db.execSQL(query);
+
+        Toast.makeText(context, "Deleted " + hit.getRecipe().getLabel() + " from favorites.", Toast.LENGTH_SHORT).show();
+
+        db.close();
     }
 }

@@ -75,6 +75,9 @@ import java.util.ArrayList;
              @Override
              public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
                  Toast.makeText(getContext(), "Deleted " + listItems.get(position).getRecipe().getLabel() + " from favorites.", Toast.LENGTH_SHORT).show();
+                 dbHelper.deleteData(listItems.get(position));
+                 listItems.remove(position);
+                 updateList();
                  return false;
              }
          });
@@ -90,13 +93,14 @@ import java.util.ArrayList;
                  DetailsFragment detailFragment = (DetailsFragment) getFragmentManager().findFragmentById(R.id.favorites_detail);
                  if (detailFragment != null && detailFragment.isVisible()) {
                      // Visible: send bundle
-                     DetailsFragment newFragment = new DetailsFragment();
+                     //DetailsFragment newFragment = new DetailsFragment();
+                     //detailFragment.updateValues(item);
                      Bundle bundle = new Bundle();
                      bundle.putString("hit", (new Gson()).toJson(item));
-                     newFragment.setArguments(bundle);
+                     detailFragment.setArguments(bundle);
 
                      FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                     transaction.replace(detailFragment.getId(), newFragment);
+                     transaction.replace(detailFragment.getId(), detailFragment);
                      transaction.addToBackStack(null);
 
                      // Commit the transaction
@@ -113,10 +117,6 @@ import java.util.ArrayList;
          });
      }
 
-     public void updateList() {
-         adapter.notifyDataSetChanged();
-     }
-
      private void getAllFavorites() {
         Cursor data = dbHelper.getData();
         while (data.moveToNext()) {
@@ -126,6 +126,7 @@ import java.util.ArrayList;
             recipe.setSource(data.getString(data.getColumnIndex(RecipeContract.RecipeEntry.PUBLISHER)));
             recipe.setCalories(data.getDouble(data.getColumnIndex(RecipeContract.RecipeEntry.CALORIES)));
             recipe.setYield(data.getInt(data.getColumnIndex(RecipeContract.RecipeEntry.SERVINGS)));
+            recipe.setUrl(data.getString(data.getColumnIndex(RecipeContract.RecipeEntry.URL)));
 
             Hit hit = new Hit();
             hit.setRecipe(recipe);
@@ -134,6 +135,10 @@ import java.util.ArrayList;
          }
          data.close();
          updateList();
+     }
+
+     public void updateList() {
+         adapter.notifyDataSetChanged();
      }
 
  }
