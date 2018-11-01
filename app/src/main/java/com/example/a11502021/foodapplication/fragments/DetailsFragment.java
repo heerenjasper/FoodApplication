@@ -32,10 +32,8 @@ public class DetailsFragment extends Fragment {
     private static final String TAG = "Details Fragment";
     private View mView;
     private CircleImageView image;
-    private Button addToFavourites;
     private TextView recipeLabel, caloriesCount, publisher, servings;
     private Hit currentHit;
-    private DatabaseHelper dbHelper;
 
     @Nullable
     @Override
@@ -45,7 +43,6 @@ public class DetailsFragment extends Fragment {
         mView = inflater.inflate(R.layout.detailsfragment_layout, container, false);
         image = (CircleImageView) mView.findViewById(R.id.detailfrag_image);
         recipeLabel = (TextView) mView.findViewById(R.id.detailfrag_recipe_name);
-        addToFavourites = (Button) mView.findViewById(R.id.detailfrag_add_to_favourites);
         caloriesCount = (TextView) mView.findViewById(R.id.detailfrag_cal);
         publisher = (TextView) mView.findViewById(R.id.detailfrag_publisher);
         servings = (TextView) mView.findViewById(R.id.detailfrag_servings);
@@ -56,20 +53,6 @@ public class DetailsFragment extends Fragment {
             currentHit = new Gson().fromJson(getArguments().getString("hit"), Hit.class);
 
             updateValues(currentHit);
-
-            dbHelper = new DatabaseHelper(this.getContext());
-
-            addToFavourites.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    boolean insertHit = dbHelper.addData(currentHit);
-                    if (insertHit) {
-                        Toast.makeText(getContext(), "Added " + currentHit.getRecipe().getLabel() + " to favorites.", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getContext(), "Error adding to favorites.", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
         }
 
         return mView;

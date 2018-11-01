@@ -46,7 +46,7 @@ public class MainFragment extends Fragment {
     private View mView;
     private EditText searchText;
     private Button searchButton, favoritesButton;
-    RelativeLayout loadingPanel;
+    RelativeLayout loadingPanel, startLayout;
 
     @Nullable
     @Override
@@ -58,11 +58,14 @@ public class MainFragment extends Fragment {
         searchButton = (Button) mView.findViewById(R.id.search_button);
         favoritesButton = (Button) mView.findViewById(R.id.favorites_button);
         loadingPanel = (RelativeLayout) mView.findViewById(R.id.loadingPanel);
+        startLayout = (RelativeLayout) mView.findViewById(R.id.start_layout);
+
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mRecyclerView.setVisibility(View.GONE);
+                startLayout.setVisibility(View.GONE);
                 loadingPanel.setVisibility(View.VISIBLE);
                 new Thread(new Runnable() {
                     public void run() {

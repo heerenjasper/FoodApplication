@@ -15,4 +15,5 @@
     <string name="title_activity_favorites">FavoritesActivity</string>
     <string name="title_activity_favorites_detail">FavoritesDetailActivity</string>
     <string name="favorites">Favorites</string>
+    <string name="search_your_first_recipe">Search your first recipe!</string>
 </resources>

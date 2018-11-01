@@ -110,6 +110,7 @@ import java.util.ArrayList;
                      // Not visible: start as intent
                      Intent intent = new Intent(getActivity().getBaseContext(), DetailActivity.class);
                      intent.putExtra("hit", (new Gson()).toJson(item));
+                     intent.putExtra("showAddToFavorites", false);
                      getActivity().startActivity(intent);
                  }
 

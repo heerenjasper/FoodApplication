@@ -81,6 +81,7 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeCardVi
 
                 Intent intent = new Intent(mContext, DetailActivity.class);
                 intent.putExtra("hit", (new Gson()).toJson(mHits.get(i)));
+                intent.putExtra("showAddToFavorites", true);
                 //intent.putExtra("label", mHits.get(i).getRecipe().getLabel());
                //intent.putExtra("image", mHits.get(i).getRecipe().getImage());
                 //intent.putExtra("publisher", mHits.get(i).getRecipe().getSource());

@@ -41,6 +41,30 @@
         android:text="@string/favorites"/>
 
     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/start_layout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:text="@string/search_your_first_recipe"
+            android:layout_below="@+id/animation_view"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="425dp"
+            android:layout_height="375dp"
+            app:lottie_fileName="melon.json"
+            app:lottie_loop="false"
+            app:lottie_autoPlay="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/loadingPanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
