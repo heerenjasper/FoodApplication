@@ -46,13 +46,19 @@
         android:gravity="center"
         android:id="@+id/start_layout">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textAlignment="center"
-            android:text="@string/search_your_first_recipe"
-            android:layout_below="@+id/animation_view"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:textSize="25sp"
+                android:textAlignment="center"
+                android:text="@string/search_your_first_recipe"/>
+
+        </RelativeLayout>
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animation_view"
