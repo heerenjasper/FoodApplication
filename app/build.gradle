@@ -53,6 +53,9 @@ dependencies {
     //lottie
     implementation 'com.airbnb.android:lottie:2.7.0'
 
+    //dropdown textview
+    compile 'com.ms-square:expandableTextView:0.1.4'
+
     //Jackson
     compile(
             [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.4.1'],

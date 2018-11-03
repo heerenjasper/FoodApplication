@@ -27,8 +27,12 @@ import com.example.a11502021.foodapplication.fragments.DetailsFragment;
 import com.example.a11502021.foodapplication.models.Hit;
 import com.example.a11502021.foodapplication.models.Recipe;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
+
  public class FavoritesListFragment extends Fragment {
 
      //LIST OF ARRAY HITS WHICH WILL SERVE AS LIST ITEMS
@@ -97,6 +101,7 @@ import java.util.ArrayList;
                      //detailFragment.updateValues(item);
                      Bundle bundle = new Bundle();
                      bundle.putString("hit", (new Gson()).toJson(item));
+                     bundle.putBoolean("clickable", false);
                      detailFragment.setArguments(bundle);
 
                      FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -110,7 +115,7 @@ import java.util.ArrayList;
                      // Not visible: start as intent
                      Intent intent = new Intent(getActivity().getBaseContext(), DetailActivity.class);
                      intent.putExtra("hit", (new Gson()).toJson(item));
-                     intent.putExtra("showAddToFavorites", false);
+                     intent.putExtra("clickable", false);
                      getActivity().startActivity(intent);
                  }
 
@@ -128,6 +133,10 @@ import java.util.ArrayList;
             recipe.setCalories(data.getDouble(data.getColumnIndex(RecipeContract.RecipeEntry.CALORIES)));
             recipe.setYield(data.getInt(data.getColumnIndex(RecipeContract.RecipeEntry.SERVINGS)));
             recipe.setUrl(data.getString(data.getColumnIndex(RecipeContract.RecipeEntry.URL)));
+            Type type = new TypeToken<List<String>>() {}.getType();
+            Gson gson = new Gson();
+            List<String> ingredients = gson.fromJson(data.getString(data.getColumnIndex(RecipeContract.RecipeEntry.INGREDIENTS)), type);
+            recipe.setIngredientLines(ingredients);
 
             Hit hit = new Hit();
             hit.setRecipe(recipe);

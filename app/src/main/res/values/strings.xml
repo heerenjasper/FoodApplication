@@ -2,11 +2,8 @@
     <string name="app_name">Recipe Searcher</string>
     <string name="action_settings">Settings</string>
     <string name="action_add_favourite">Add to Favourites</string>
-    <string name="action_play_next">Play Next</string>
-    <string name="backdrop_title">LOVE MUSIC</string>
-    <string name="backdrop_subtitle">This season top 20 albums</string>
     <string name="your_keyword_here">Your keyword here…</string>
-    <string name="add_fav">Add to favourites</string>
+    <string name="add_fav">Add to favorites</string>
     <string name="cal_serving">Cal/Serving</string>
     <string name="recipe_label">Recipe Label</string>
     <string name="servings">Servings</string>
@@ -16,4 +13,7 @@
     <string name="title_activity_favorites_detail">FavoritesDetailActivity</string>
     <string name="favorites">Favorites</string>
     <string name="search_your_first_recipe">Search your first recipe!</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="all_ingredients">All ingredients</string>
+    <string name="instructions">Instructions</string>
 </resources>

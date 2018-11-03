@@ -2,26 +2,24 @@ package com.example.a11502021.foodapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.a11502021.foodapplication.database.DatabaseHelper;
-import com.example.a11502021.foodapplication.fragments.DetailsFragment;
 import com.example.a11502021.foodapplication.models.Hit;
 import com.google.gson.Gson;
 
-import org.w3c.dom.Text;
-
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class DetailActivity extends FragmentActivity {
 
-    Button addToFavorites;
+    Button addToFavorites, instructions;
     private DatabaseHelper dbHelper;
     private Hit hit;
 
@@ -33,14 +31,16 @@ public class DetailActivity extends FragmentActivity {
         setContentView(R.layout.activity_favorites_detail);
 
         addToFavorites = (Button) findViewById(R.id.detailfrag_add_to_favourites);
+        instructions = (Button) findViewById(R.id.detailfrag_instructions);
 
         Intent intent = getIntent();
         hit = new Gson().fromJson(intent.getExtras().getString("hit"), Hit.class);
-        boolean showAddToFavorites = intent.getExtras().getBoolean("showAddToFavorites");
+        boolean clickable = intent.getExtras().getBoolean("clickable");
 
-        if (showAddToFavorites) {
+        if (clickable) {
             dbHelper = new DatabaseHelper(this);
-            addToFavorites.setVisibility(View.VISIBLE);
+            addToFavorites.setClickable(true);
+            addToFavorites.setBackgroundResource(R.drawable.buttonstyle);
 
             addToFavorites.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -48,12 +48,22 @@ public class DetailActivity extends FragmentActivity {
                     boolean insertHit = dbHelper.addData(hit);
                     if (insertHit) {
                         Toast.makeText(DetailActivity.this, "Added " + hit.getRecipe().getLabel() + " to favorites.", Toast.LENGTH_SHORT).show();
+                        addToFavorites.setClickable(false);
+                        addToFavorites.setBackgroundResource(R.drawable.buttonstyle_disabled);
                     } else {
                         Toast.makeText(DetailActivity.this, "Error adding to favorites.", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
+
+        instructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent moveToWebsite = new Intent(Intent.ACTION_VIEW, Uri.parse(hit.getRecipe().getUrl()));
+                startActivity(moveToWebsite);
+            }
+        });
 
         updateValues(hit);
 
@@ -64,12 +74,17 @@ public class DetailActivity extends FragmentActivity {
         Glide.with(this)
                 .asBitmap()
                 .load(hit.getRecipe().getImage())
-                .into((CircleImageView) findViewById(R.id.detailfrag_image));
+                .into((ImageView) findViewById(R.id.detailfrag_image));
         ((TextView) findViewById(R.id.detailfrag_recipe_name)).setText(hit.getRecipe().getLabel());
         ((TextView) findViewById(R.id.detailfrag_cal)).setText(Math.round(hit.getRecipe().getCalories().intValue() /
                 hit.getRecipe().getYield()) + "");
         ((TextView) findViewById(R.id.detailfrag_publisher)).setText(hit.getRecipe().getSource());
         ((TextView) findViewById(R.id.detailfrag_servings)).setText(hit.getRecipe().getYield().toString());
+        ((TextView) findViewById(R.id.detailfrag_amount_ingredients)).setText(hit.getRecipe().getIngredientLines().size() + " Ingredients");
+        StringBuilder ingredients = new StringBuilder();
+        for (String item : hit.getRecipe().getIngredientLines()) {
+            ingredients.append(item).append("\n\n");
+        }
+        ((TextView) findViewById(R.id.detailfrag_all_ingredients)).setText(ingredients);
     }
-
 }

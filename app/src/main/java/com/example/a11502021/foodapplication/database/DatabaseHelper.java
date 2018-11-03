@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.a11502021.foodapplication.models.Hit;
+import com.google.gson.Gson;
 
 /**
  * Created by 11502021 on 26/10/2018.
@@ -19,7 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = "DatabaseHelper";
 
     private static final String DB_NAME = "favorites";
-    private static final int DB_VERSION = 2;
+    private static final int DB_VERSION = 3;
     private Context context;
 
     public DatabaseHelper(Context context) {
@@ -36,7 +37,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 RecipeContract.RecipeEntry.PUBLISHER + " TEXT NOT NULL, " +
                 RecipeContract.RecipeEntry.CALORIES + " REAL NOT NULL, " +
                 RecipeContract.RecipeEntry.SERVINGS + " INTEGER NOT NULL, " +
-                RecipeContract.RecipeEntry.URL + " TEXT NOT NULL" +
+                RecipeContract.RecipeEntry.URL + " TEXT NOT NULL, " +
+                RecipeContract.RecipeEntry.INGREDIENTS + " TEXT NOT NULL" +
                 ");";
 
         sqLiteDatabase.execSQL(SQL_CREATE_FAVORITES_TABLE);
@@ -67,6 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(RecipeContract.RecipeEntry.CALORIES, hit.getRecipe().getCalories());
         contentValues.put(RecipeContract.RecipeEntry.SERVINGS, hit.getRecipe().getYield());
         contentValues.put(RecipeContract.RecipeEntry.URL, hit.getRecipe().getUrl());
+        contentValues.put(RecipeContract.RecipeEntry.INGREDIENTS, new Gson().toJson(hit.getRecipe().getIngredientLines()));
 
         Log.d(TAG, "addData: " + "Adding " + hit.getRecipe().getLabel() + " to " + RecipeContract.RecipeEntry.TABLE_NAME);
 

@@ -71,22 +71,10 @@ public class RecipeRecyclerViewAdapter extends RecyclerView.Adapter<RecipeCardVi
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: Clicked on " + mHits.get(i).getRecipe().getLabel());
-/*
-                MainActivity mainActivity = (MainActivity) mContext;
-                DetailsFragment detailsFragment;
-                //detailsFragment = (DetailsFragment) mainActivity.getmStatePagerAdapter().getItem(1);
-                detailsFragment = (DetailsFragment) mainActivity.getFragmentManager().findFragmentById(R.id.favorites_detail);
-                detailsFragment.updateValues(mHits.get(i));
-                mainActivity.setViewPager(1);*/
 
                 Intent intent = new Intent(mContext, DetailActivity.class);
                 intent.putExtra("hit", (new Gson()).toJson(mHits.get(i)));
-                intent.putExtra("showAddToFavorites", true);
-                //intent.putExtra("label", mHits.get(i).getRecipe().getLabel());
-               //intent.putExtra("image", mHits.get(i).getRecipe().getImage());
-                //intent.putExtra("publisher", mHits.get(i).getRecipe().getSource());
-                //intent.putExtra("calories", (mHits.get(i).getRecipe().getCalories().intValue() / mHits.get(i).getRecipe().getYield()) + "");
-                //intent.putExtra("servings", mHits.get(i).getRecipe().getYield().toString());
+                intent.putExtra("clickable", true);
                 mContext.startActivity(intent);
             }
         });

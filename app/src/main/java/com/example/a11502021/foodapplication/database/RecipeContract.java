@@ -21,6 +21,7 @@ public final class RecipeContract {
         public static final String CALORIES = "calories";
         public static final String SERVINGS = "servings";
         public static final String URL = "url";
+        public static final String INGREDIENTS = "ingredients";
 
     }
 
