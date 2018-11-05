@@ -1,5 +1,6 @@
 package com.example.a11502021.foodapplication.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +15,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.LottieDrawable;
 import com.example.a11502021.foodapplication.FavoritesActivity;
 import com.example.a11502021.foodapplication.R;
 import com.example.a11502021.foodapplication.adapters.RecipeRecyclerViewAdapter;
@@ -23,6 +27,8 @@ import com.example.a11502021.foodapplication.api.Api;
 import com.example.a11502021.foodapplication.fragments.decoration.GridSpacingItemDecoration;
 import com.example.a11502021.foodapplication.models.Example;
 import com.example.a11502021.foodapplication.models.Hit;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -39,7 +45,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainFragment extends Fragment {
     private static final String TAG = "Main Fragment";
 
-    // controls declaration here
     private ArrayList<Hit> mHits = new ArrayList<>();
     RecyclerView mRecyclerView;
     RecipeRecyclerViewAdapter mAdapter;
@@ -47,6 +52,8 @@ public class MainFragment extends Fragment {
     private EditText searchText;
     private Button searchButton, favoritesButton;
     RelativeLayout loadingPanel, startLayout;
+    private LottieAnimationView startPageAnim;
+    private TextView startPageFeedback;
 
     @Nullable
     @Override
@@ -59,7 +66,8 @@ public class MainFragment extends Fragment {
         favoritesButton = (Button) mView.findViewById(R.id.favorites_button);
         loadingPanel = (RelativeLayout) mView.findViewById(R.id.loadingPanel);
         startLayout = (RelativeLayout) mView.findViewById(R.id.start_layout);
-
+        startPageAnim = (LottieAnimationView) mView.findViewById(R.id.animation_view_startpage);
+        startPageFeedback = (TextView) mView.findViewById(R.id.startPage_feedback);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +96,7 @@ public class MainFragment extends Fragment {
         return mView;
     }
 
-    public void ApiGetByKeyword(String keyword) {
+    private void ApiGetByKeyword(String keyword) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Api.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -119,6 +127,7 @@ public class MainFragment extends Fragment {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void initHits(Example hits) {
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
 
@@ -127,7 +136,12 @@ public class MainFragment extends Fragment {
         if (hits.getCount() != 0) {
             mHits.addAll(hits.getHits());
         } else {
-            Toast.makeText(getContext(), "No results were found.", Toast.LENGTH_SHORT).show();
+            startLayout.setVisibility(View.VISIBLE);
+            startPageFeedback.setText("No results were found...");
+            startPageAnim.setPadding(0,0,0,175);
+            startPageAnim.setAnimation("empty_list.json");
+            startPageAnim.loop(true);
+            startPageAnim.playAnimation();
         }
 
         updateRecyclerView();

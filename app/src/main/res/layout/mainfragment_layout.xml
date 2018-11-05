@@ -51,6 +51,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/startPage_feedback"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="250dp"
@@ -61,7 +62,7 @@
         </RelativeLayout>
 
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animation_view_melon"
+            android:id="@+id/animation_view_startpage"
             android:layout_width="425dp"
             android:layout_height="375dp"
             app:lottie_fileName="melon.json"

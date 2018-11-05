@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Recipe Searcher</string>
     <string name="action_settings">Settings</string>
-    <string name="action_add_favourite">Add to Favourites</string>
+    <string name="action_add_favourite">Add to Favorites</string>
     <string name="your_keyword_here">Your keyword here…</string>
     <string name="add_fav">Add to favorites</string>
     <string name="cal_serving">Cal/Serving</string>
