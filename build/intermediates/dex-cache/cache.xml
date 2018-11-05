@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\51965b1c544a63342dd061e35f4820b2\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="376a25a3bdce5133262368e85d430aae5bb80c28">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\41.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\20819105454110ef10466b725845c366\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="fad505737146925636e28753e26523c3a8a03e48">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\24.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\e78e75230b2e269dfd10965e9ae96463\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f1c031c4ca26cea0adbe178007dd3bfd311be983">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\2d42d8b59129c49e051e981385bbe242\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e70a3fed299d84cd868614e11021664d72b8e488">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.1\b130bcfb5a9c410c3cbd2e0adec9437e69a39e2c\jackson-core-2.4.1.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b130bcfb5a9c410c3cbd2e0adec9437e69a39e2c">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\28.0.0\ed73f5337a002d1fd24339d5fb08c2c9d9ca60d8\support-annotations-28.0.0.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ed73f5337a002d1fd24339d5fb08c2c9d9ca60d8">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\48.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\18eebbf5a9c12a7679db9375d9be7916\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f77c6cfaee7ee7c8844d5340e47a38c3fdea7060">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\annotations\4.8.0\c4c9e79eb2bfeb9059fce55020c6b237402285f6\annotations-4.8.0.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c4c9e79eb2bfeb9059fce55020c6b237402285f6">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\51.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\c560fa8b604d4fb0be8ea969ff3c3ccd\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="5b049b5525643f62ebe162013dae975c7e74dcc5">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\17.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.2\3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf\gson-2.8.2.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\24fca45f24c70571fd619e9dd7dba612\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b05ce31f5d87a7f16cdbdbc5e3a7cf2190bf0118">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\19.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\3c997078dfbe2d294f26208593f3ce7e\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b99e6cdcb85894164e1a06145a5f6b78e3cb7270">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.4.0\15d7790ee311d961379c51b00aba12d5967cb7ea\converter-gson-2.4.0.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="15d7790ee311d961379c51b00aba12d5967cb7ea">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\lottie-2.7.0.aar\1f40103056367411e82111adbb8876c2\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ce528f9a8baaa220c35b7741eab4c89e0557931f">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\5b4092e6ea0c7ad6e37a06fe9895ebf8\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b1173d9f45ae18f2e0dc8ec42d15fa5b95c391d1">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\43.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\gifdecoder-4.8.0.aar\4e1378250f6bb7fb0bab6dfc26c225ba\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="221de83c08ed1502286513b4d472d256341e8839">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\36.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\f4847811e850da0597fea0b36359db62\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ddfc0d219f43bf3c1e357a55284cbd1000e461bf">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\8414d68e0559f02c6a83c8b16b0a9668\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ada02cfa6d6403e90138de411c67d8f6763b3018">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.4.1\55605135bd7b836612e0bba7037c9669f6ccf89f\jackson-annotations-2.4.1.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="55605135bd7b836612e0bba7037c9669f6ccf89f">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.10.0\7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e\okhttp-3.10.0.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\52.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\5862b24cdeb3e71ac29daf9367f46079\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2e85417e7990657be8fe07d63fd5278d82eb960e">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\fe70cff792f60f810f04a94d217c46c5\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8510837b7e70ee5f12cf2a20dd0a1b3d23a0cdeb">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\28.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\94b3fa6b0b134805e56327fe02e7dae9\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ba4c894fd0a3d36e8f06f4947ab639140e668088">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\d26a2c44f2e8baed4a6e6e60d23ee498\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3fec43a847d8788b7642a1932e6266ef8bdab169">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.1.1\207a6efae6a3555e326de41f76bdadd9a239cbce\common-1.1.1.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="207a6efae6a3555e326de41f76bdadd9a239cbce">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\44.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.1.1\e55b70d1f5620db124b3e85a7f4bdc7bd48d9f95\common-1.1.1.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e55b70d1f5620db124b3e85a7f4bdc7bd48d9f95">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\46.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\5d8f390783fed67b6f5d3000b73b8508\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="31b98191e7c892b25799dbe30c8124210a68e201">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\780784af57c244e80ef730a3ed5f9b65\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="234e706c7aea09f97738c7830d144d50d240079e">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\10.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.1.3\bde0667d7414c16ed62d3cfe993cff7f9d732373\constraint-layout-solver-1.1.3.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bde0667d7414c16ed62d3cfe993cff7f9d732373">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\49.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\2d19259c44dfca6d4897c34abd9843c1\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="41b8c7e99024d4288d7dfc709bb72fdaa5fdc32f">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\25.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.1\f07c773f7b3a03c3801d405cadbdc93f7548e321\jackson-databind-2.4.1.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f07c773f7b3a03c3801d405cadbdc93f7548e321">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\4b0dcde09ef02706d744f4bcde30f90c\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b15c6ded887ad967e20bb335c1a121b253c04dce">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\ef17b402287117fcc37213e866e70edc\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e9b03dd36d3c106574e2cdeb8edd543bd5e51d0e">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\39.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\d9f424400bd580cd798ca31c22b976e1\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ef698b3c8609d86cac06834429a39ef417d5b57a">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\d5517a83051dd47ef6fdc1c00369d474\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="de467de1baba33a922246561f87c0a910206d1ff">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\47.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\c5f7bc1cb3116f430bfebc44db83424d\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7b15ada2209f82b0249f331cb7ec70394dc2e828">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\40.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\expandableTextView-0.1.4.aar\a134a1bb06f96e2f58fa43222f5f76c4\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b305cfd7ae732d7c146fe3046aea90f877c3892b">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\cd6ff964c9161ded68dcc8920f051c7f\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9335f203759bfcda4b6ea729dddcf06c07150d3f">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\9c5043e253b1a1aecaaa3e40b4a08fe5\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a69067467c7e4d5c810ea19ee43cbfab00a292b4">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\37.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\1ed2e3ba18b0329e00686380d3d8bf8f\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="925ec89d545e33030131b9470db85e701a8c61a4">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\26.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\library-1.3.0.aar\5d816ea63d63f92c2b2cbfd7c222a0b1\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8ec8378e8d7aa3104f60823e6350f2728d3609ba">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\45bef03688b7b93559e171334896019a\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="70bf65523dc3db43f6c3749931976585a8f4dd20">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\38.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.4.0\fc4aa382632bfaa7be7b41579efba41d5a71ecf3\retrofit-2.4.0.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="fc4aa382632bfaa7be7b41579efba41d5a71ecf3">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\glide-4.8.0.aar\15aa006709ebcd344f527fd50512ee03\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cd43d71aaa1a0cffd99bd105acd1fe0454ace4dd">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\d9ad4b2de6af93348a8559553ddff585\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="afb9ac89f722ac83466f1bb5f2135010b7f05f32">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\45.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\d5a63fc06adc167fe7e7c6be9a738dab\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="be31b531309a9196873ba4ac96ea9484ca0ecad6">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\22.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.14.0\102d7be47241d781ef95f1581d414b0943053130\okio-1.14.0.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="102d7be47241d781ef95f1581d414b0943053130">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\54.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\0fc95c97df3f3fff2f3da02f5655000f\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="19e63f5c3afd0a4379bfb830816bb8a9661aba75">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\c3a41667fb479790dfbd0752b9c06532\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="49b8af59d5819c80792707bdda93a5c9a917e24c">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\29.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\0291a96abab6162e36dba75aec09c2a9\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b9aff7eec7a0b091e460e44b8bb0bf64cadc0844">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\35.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.android.support\collections\28.0.0\c1bcdade4d3cc2836130424a3f3e4182c666a745\collections-28.0.0.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c1bcdade4d3cc2836130424a3f3e4182c666a745">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\34.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\disklrucache\4.8.0\a7448551cb3edd61bcf3d1b1136b670e630441cf\disklrucache-4.8.0.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a7448551cb3edd61bcf3d1b1136b670e630441cf">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\50.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\af3f6b8e4c773ed112be4019d9d0dae4\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a6d4c3181151ffbcd67897e94c688f6c200c5bec">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\23.jar" />
+    </item>
+
+</items>

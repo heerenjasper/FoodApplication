@@ -11,12 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <TextView
-            android:id="@+id/textView"
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/detailfrag_animation_view_favorite"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Portait" />
+            android:layout_height="75dp"
+            app:lottie_fileName="favorite.json"
+            app:lottie_loop="false"
+            app:lottie_autoPlay="true"/>
 
         <!-- TODO 2. ADD FRAGMENT TO TO LAYOUT FILE -->
         <fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesListFragment"

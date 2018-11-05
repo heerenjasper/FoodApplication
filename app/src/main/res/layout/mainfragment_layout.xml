@@ -61,7 +61,7 @@
         </RelativeLayout>
 
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animation_view"
+            android:id="@+id/animation_view_melon"
             android:layout_width="425dp"
             android:layout_height="375dp"
             app:lottie_fileName="melon.json"

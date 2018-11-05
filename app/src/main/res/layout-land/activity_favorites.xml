@@ -13,29 +13,40 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="20dp">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Landscape" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
             >
 
-            <!-- TODO 2A. ADD FRAGMENT TO TO LAYOUT FILE -->
-            <fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesListFragment"
-                android:id="@+id/favorites_list"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="3"
-                android:layout_height="match_parent"/>
-            <!-- END -->
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/detailfrag_animation_view_favorite"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="75dp"
+                        app:lottie_fileName="favorite.json"
+                        app:lottie_loop="false"
+                        app:lottie_autoPlay="true"/>
+
+                    <!-- TODO 2A. ADD FRAGMENT TO TO LAYOUT FILE -->
+                    <fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesListFragment"
+                        android:layout_marginTop="75dp"
+                        android:id="@+id/favorites_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
+                    <!-- END -->
+
+                </android.support.constraint.ConstraintLayout>
+
+            </LinearLayout>
 
             <!-- TODO 2B. ADD FRAGMENT TO TO LAYOUT FILE
             <fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesDetailFragment"

@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.example.a11502021.foodapplication.database.DatabaseHelper;
 import com.example.a11502021.foodapplication.models.Hit;
