@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ public class DetailActivity extends FragmentActivity {
     Button addToFavorites, instructions;
     private DatabaseHelper dbHelper;
     private Hit hit;
+    FloatingActionButton navigateBack;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -33,6 +35,7 @@ public class DetailActivity extends FragmentActivity {
 
         addToFavorites = (Button) findViewById(R.id.detailfrag_add_to_favourites);
         instructions = (Button) findViewById(R.id.detailfrag_instructions);
+        navigateBack = (FloatingActionButton) findViewById(R.id.fab_back);
 
         Intent intent = getIntent();
         hit = new Gson().fromJson(intent.getExtras().getString("hit"), Hit.class);
@@ -52,7 +55,7 @@ public class DetailActivity extends FragmentActivity {
                         addToFavorites.setClickable(false);
                         addToFavorites.setBackgroundResource(R.drawable.buttonstyle_disabled);
                     } else {
-                        Toast.makeText(DetailActivity.this, "Error adding to favorites.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DetailActivity.this, "Error adding recipe to favorites.", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -63,6 +66,13 @@ public class DetailActivity extends FragmentActivity {
             public void onClick(View view) {
                 Intent moveToWebsite = new Intent(Intent.ACTION_VIEW, Uri.parse(hit.getRecipe().getUrl()));
                 startActivity(moveToWebsite);
+            }
+        });
+
+        navigateBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 

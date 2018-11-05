@@ -6,12 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-    <!-- TODO 3 ADD FRAGMENT TO TO LAYOUT FILE -->
-    <!--<fragment android:name="com.example.a11502021.foodapplication.fragments.favoritesFragments.FavoritesDetailFragment"
-        android:id="@+id/favorites_detail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-     END -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:src="@drawable/ic_back"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_margin="15dp"/>
 
     <fragment android:name="com.example.a11502021.foodapplication.fragments.DetailsFragment"
         android:id="@+id/favorites_detail"
