@@ -3,6 +3,7 @@ package com.example.a11502021.foodapplication.adapters;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,6 @@ import com.example.a11502021.foodapplication.R;
 import com.example.a11502021.foodapplication.models.Hit;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -28,11 +27,13 @@ public class FavoritesListAdapter extends ArrayAdapter<Hit> {
 
     private Context mContext;
     private int mResource;
+    public ArrayList<Hit> mHits = new ArrayList<>();
 
     public FavoritesListAdapter(@NonNull Context context, int resource, ArrayList<Hit> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
+        mHits = objects;
     }
 
     @NonNull
@@ -58,4 +59,14 @@ public class FavoritesListAdapter extends ArrayAdapter<Hit> {
 
         return convertView;
     }
+
+    public int getItemCount() {
+        return mHits.size();
+    }
+
+    @Override
+    public void remove(Hit hit) {
+        this.mHits.remove(hit);
+    }
+
 }

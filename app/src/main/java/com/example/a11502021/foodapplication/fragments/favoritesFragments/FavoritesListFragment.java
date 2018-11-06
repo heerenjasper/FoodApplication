@@ -65,8 +65,7 @@ import java.util.List;
 
              @Override
              public void create(SwipeMenu menu) {
-                 SwipeMenuItem deleteItem = new SwipeMenuItem(
-                         getContext());
+                 SwipeMenuItem deleteItem = new SwipeMenuItem(getContext());
                  deleteItem.setWidth(250);
                  deleteItem.setIcon(R.drawable.ic_delete);
                  menu.addMenuItem(deleteItem);
@@ -78,10 +77,12 @@ import java.util.List;
          listView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
              @Override
              public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
-                 Toast.makeText(getContext(), "Deleted " + listItems.get(position).getRecipe().getLabel() + " from favorites.", Toast.LENGTH_SHORT).show();
-                 dbHelper.deleteData(listItems.get(position));
-                 listItems.remove(position);
-                 updateList();
+                 Toast.makeText(getContext(), "Deleted " + adapter.getItem(position).getRecipe().getLabel() + " from favorites.", Toast.LENGTH_SHORT).show();
+                 dbHelper.deleteData(adapter.getItem(position));
+                 adapter.remove(adapter.getItem(position));
+                 adapter = new FavoritesListAdapter(getContext(), R.layout.favorites_adapterview_layout, adapter.mHits);
+                 listView.setAdapter(adapter);
+                 adapter.notifyDataSetChanged();
                  return false;
              }
          });
@@ -105,7 +106,7 @@ import java.util.List;
                      detailFragment.setArguments(bundle);
 
                      FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                     transaction.replace(detailFragment.getId(), detailFragment);
+                     transaction.replace(R.id.detailsFrag, detailFragment);
                      transaction.addToBackStack(null);
 
                      // Commit the transaction
@@ -141,13 +142,14 @@ import java.util.List;
             Hit hit = new Hit();
             hit.setRecipe(recipe);
 
-            listItems.add(hit);
+            adapter.add(hit);
          }
          data.close();
          updateList();
      }
 
      public void updateList() {
+         //adapter = new FavoritesListAdapter(getActivity(), 0, adapter.mHits);
          adapter.notifyDataSetChanged();
      }
 
