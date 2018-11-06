@@ -99,18 +99,15 @@ import java.util.List;
                  if (detailFragment != null && detailFragment.isVisible()) {
                      // Visible: send bundle
                      //DetailsFragment newFragment = new DetailsFragment();
-                     //detailFragment.updateValues(item);
-                     Bundle bundle = new Bundle();
+                     detailFragment.updateValues(item);
+                     /*Bundle bundle = new Bundle();
                      bundle.putString("hit", (new Gson()).toJson(item));
                      bundle.putBoolean("clickable", false);
                      detailFragment.setArguments(bundle);
 
                      FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                     transaction.replace(R.id.detailsFrag, detailFragment);
-                     transaction.addToBackStack(null);
-
-                     // Commit the transaction
-                     transaction.commit();
+                     transaction.setReorderingAllowed(false);
+                     transaction.detach(detailFragment).attach(detailFragment).commit();*/
                  }
                  else {
                      // Not visible: start as intent

@@ -49,27 +49,12 @@ public class DetailsFragment extends Fragment {
         ingredients = (TextView) mView.findViewById(R.id.detailfrag_all_ingredients);
         instructions = (Button) mView.findViewById(R.id.detailfrag_instructions);
 
-        Bundle bundle = getArguments();
-
-        if(bundle != null){
-            currentHit = new Gson().fromJson(getArguments().getString("hit"), Hit.class);
-
-            updateValues(currentHit);
-
-            instructions.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent moveToWebsite = new Intent(Intent.ACTION_VIEW, Uri.parse(currentHit.getRecipe().getUrl()));
-                    startActivity(moveToWebsite);
-                }
-            });
-        }
-
         return mView;
     }
 
     @SuppressLint("SetTextI18n")
     public void updateValues(Hit hit) {
+        this.currentHit = hit;
             Glide.with(getContext())
                     .asBitmap()
                     .load(hit.getRecipe().getImage())
@@ -85,6 +70,14 @@ public class DetailsFragment extends Fragment {
                 ingredients.append(item).append("\n\n");
             }
             this.ingredients.setText(ingredients);
+
+        instructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent moveToWebsite = new Intent(Intent.ACTION_VIEW, Uri.parse(currentHit.getRecipe().getUrl()));
+                startActivity(moveToWebsite);
+            }
+        });
     }
 
 }
