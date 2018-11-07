@@ -16,4 +16,7 @@
     <string name="ingredients">Ingredients</string>
     <string name="all_ingredients">All ingredients</string>
     <string name="instructions">Instructions</string>
+    <string name="_servings">0</string>
+    <string name="_publisher">none</string>
+    <string name="_calories">0</string>
 </resources>

@@ -3,6 +3,7 @@ package com.example.a11502021.foodapplication.fragments;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -78,6 +79,7 @@ public class DetailsFragment extends Fragment {
                 startActivity(moveToWebsite);
             }
         });
+
     }
 
 }

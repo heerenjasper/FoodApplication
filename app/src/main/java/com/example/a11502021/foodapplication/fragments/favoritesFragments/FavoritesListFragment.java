@@ -3,7 +3,6 @@
 package com.example.a11502021.foodapplication.fragments.favoritesFragments;
 
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -93,7 +92,6 @@ import java.util.List;
              @Override
              public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                  Hit item = (Hit)listView.getItemAtPosition(i);
-                 Toast.makeText(getActivity(), item.getRecipe().getLabel(), Toast.LENGTH_SHORT).show();
 
                  DetailsFragment detailFragment = (DetailsFragment) getFragmentManager().findFragmentById(R.id.favorites_detail);
                  if (detailFragment != null && detailFragment.isVisible()) {
@@ -146,7 +144,6 @@ import java.util.List;
      }
 
      public void updateList() {
-         //adapter = new FavoritesListAdapter(getActivity(), 0, adapter.mHits);
          adapter.notifyDataSetChanged();
      }
 

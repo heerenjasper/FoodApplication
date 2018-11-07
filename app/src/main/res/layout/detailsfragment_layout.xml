@@ -79,7 +79,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="125"
+                            android:text="@string/_calories"
                             android:textStyle="bold"
                             android:textSize="20sp"
                             android:paddingTop="10dp"
@@ -102,7 +102,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="1205"
+                            android:text="@string/_publisher"
                             android:textStyle="bold"
                             android:textSize="17sp"
                             android:paddingTop="10dp"
@@ -125,7 +125,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="360"
+                            android:text="@string/_servings"
                             android:textStyle="bold"
                             android:textSize="20sp"
                             android:paddingTop="10dp"
