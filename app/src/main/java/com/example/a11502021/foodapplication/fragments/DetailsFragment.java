@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -34,6 +35,7 @@ public class DetailsFragment extends Fragment {
     private TextView recipeLabel, caloriesCount, publisher, servings, ingredientAmount, ingredients;
     private Hit currentHit;
     private Button instructions;
+    private ScrollView scrollView;
 
     @Nullable
     @Override
@@ -49,6 +51,7 @@ public class DetailsFragment extends Fragment {
         ingredientAmount = (TextView) mView.findViewById(R.id.detailfrag_amount_ingredients);
         ingredients = (TextView) mView.findViewById(R.id.detailfrag_all_ingredients);
         instructions = (Button) mView.findViewById(R.id.detailfrag_instructions);
+        scrollView = (ScrollView) mView.findViewById(R.id.detailfrag_scrollview);
 
         return mView;
     }
@@ -79,6 +82,8 @@ public class DetailsFragment extends Fragment {
                 startActivity(moveToWebsite);
             }
         });
+
+        scrollView.fullScroll(ScrollView.FOCUS_UP);
 
     }
 
