@@ -3,8 +3,6 @@ package com.example.a11502021.foodapplication.fragments;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -21,7 +19,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.a11502021.foodapplication.R;
 import com.example.a11502021.foodapplication.models.Hit;
-import com.google.gson.Gson;
 
 /**
  * Created by 11502021 on 17/10/2018.

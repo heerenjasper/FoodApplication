@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".ApplicationClass"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -30,6 +31,15 @@
             android:label="@string/title_activity_favorites_detail"
             android:configChanges="locale|keyboard|keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <service
+            android:name=".util.NotificationExtender"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.onesignal.NotificationExtender" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
