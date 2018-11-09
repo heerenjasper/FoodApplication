@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\customtabs-28.0.0.aar\06d66bb61dc34cf7181569fd854ab0b2\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="84999659741580bdfadc0bb615e31d6796e62074">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\26.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\22774b14a72bd1f8048daaca6b17b0f4\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="22569eca3029ab00583c332a2be220cdbf091b35">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\firebase-iid-12.0.1.aar\dd15135f39ddec167cff2633599ff2d1\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b739661c7142579d33f42801cfb71882cd217727">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\OneSignal-3.10.3.aar\5df1576de714c5e8ab9be62114ecd9ff\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ba21d4c191051bc268e23b3b0963d61dd8192b8e">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\firebase-messaging-12.0.1.aar\e5577ceef63a90aad63f7e4cbcb374dd\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e1086213a85bf2bfc3f6448d66581198ba380f69">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\d26c7bd9fa68b82a63b49e152e1582e5\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ed8395f343c428cd55c60499f04323083f4ef0db">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\play-services-location-12.0.1.aar\964f2ccd563c88e7532ab599bf4720f4\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="16f423bae182fd81553d109269f7a5e13fd1cb52">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.1.aar\5fa62e031fa8a54664168cd4cd230b6b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a38a8974c8d066800237d22a86df2e88cb9e065c">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\17.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\11502021\.gradle\caches\transforms-1\files-1.1\firebase-common-12.0.1.aar\932cbfd610f0aa73dc4e1a2b121e61f9\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="26"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d8ec04dc91c0c90a0ceeca77c94c8b15cb7f3892">
+        <dex dex="C:\Users\11502021\Desktop\SoftwareEngineering-Group14\FoodApplication\app\build\intermediates\transforms\preDex\release\16.jar" />
+    </item>
+
+</items>
